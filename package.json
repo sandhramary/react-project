@@ -1,0 +1,26 @@
+{
+  "name": "react-project",
+  "version": "1.0.0",
+  "description": "Sample react project",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandhramary/react-project.git"
+  },
+  "author": "Sandhra Mary Prince",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandhramary/react-project/issues"
+  },
+  "homepage": "https://github.com/sandhramary/react-project#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
