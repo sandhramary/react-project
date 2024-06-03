@@ -27,13 +27,31 @@
     cursor: pointer;
 }
 
-.restaurant-container {
+.body-container {
     margin-top: 50px;
     height: calc(100% - 200px);
     overflow-y: auto;
+}
+
+.body-toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.body-toolbar > button {
+    cursor: pointer;
+}
+
+.restaurant-container {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
+}
+
+.inputBox {
+    width: 30%;
+    height: 40px;
 }
 
 .restaurant-card {
@@ -52,13 +70,10 @@
 }
 
 .footer {
-    width: 100%;
     display: flex;
     padding-right: 20px;
     justify-content: space-between;
     align-items: center;
     height: 100px;
     border-top: 1px solid black;
-    position: fixed;
-    bottom: 0;
 }
