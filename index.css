@@ -50,7 +50,14 @@
 }
 
 .inputBox {
-    width: 30%;
+    height: 34px;
+}
+
+.search {
+    width: 50%;
+}
+
+button {
     height: 40px;
 }
 
@@ -59,6 +66,12 @@
     width: 300px;
     padding: 5px;
     cursor: pointer;
+}
+
+.shimmer-card {
+    background-color: bisque;
+    width: 300px;
+    height: 400px;
 }
 
 .restaurant-card:hover {
