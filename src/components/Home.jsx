@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import RestaurantCard from "./RestaurantCard";
 import ShimmerUi from "./ShimmerUi";
+import { RESTUARANTS_LIST_API_URL } from "../common/constants";
 
-const Body = () => {
+const Home = () => {
   const [list, setList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [search, setSearch] = useState("");
@@ -21,9 +23,7 @@ const Body = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.91850&lng=76.25580&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
+      const data = await fetch(RESTUARANTS_LIST_API_URL);
       const jsonData = await data.json();
       const cards =
         jsonData?.data?.cards[1].card.card?.gridElements?.infoWithStyle
@@ -31,7 +31,6 @@ const Body = () => {
       setList(cards);
       setFilteredList(cards);
     };
-    console.log("useeffect rendered");
 
     fetchData();
   }, []);
@@ -57,11 +56,15 @@ const Body = () => {
         {filteredList?.length === 0 ? (
           <ShimmerUi />
         ) : (
-          filteredList?.map((item) => <RestaurantCard resDetails={item} />)
+          filteredList?.map((item) => (
+            <Link key={item?.info?.id} to={"/restaurants/" + item?.info?.id}>
+              <RestaurantCard resDetails={item} />
+            </Link>
+          ))
         )}
       </div>
     </div>
   );
 };
 
-export default Body;
+export default Home;
